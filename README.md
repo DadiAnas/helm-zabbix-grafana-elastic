@@ -6,15 +6,19 @@ This [Helm](https://dadianas.github.io/helm-zabbix-grafana-elastic) chart instal
 
 In order to install all the charts: Zabbix, grafana and EFK stack (ElasticSearch/Fluent-bit/Kibana) on kubernetes, you must have a well configured kubernetes cluster.
 
-In my case I am using a Kubernetes cluster that runing on Virtual Machines with VMware Photon Os in a VMware ESXI Server. If you need to install configure your own cluster using VMs with photon OS, you should have a look to git repo directory kubeadm you must find two scripts to install kubeadm on master node and other for workers.
+In my case I am using a Kubernetes cluster that runing on Virtual Machines with VMware Photon Os in a VMware ESXI Server.
 
-The second thins that you need is helm, the package manager for kubernetes, installed on the master node, take a look in helm website for that.
+If you need to install and configure your own cluster using virtual machines with photon OS, look at this [repo](https://github.com/DadiAnas/zabbix-kubernetes) there are two scripts that will help to install kubeadm on master node and workers nodes.
+
+The second thing that you need is [helm](https://helm.sh/): the package manager for kubernetes, installed on the master node.
+
+Third thing is that Persistent Volume provisioner should be supported in the underlying infrastructure.
 
 To sum it up:
 
 - Kubernetes cluster 1.10+
 - Helm 3.0+
-- Persistent Volume provisioner support in the underlying infrastructure.
+- PV provisioner support in the underlying infrastructure.
 
 ## Configure the chart
 
