@@ -8,7 +8,7 @@ In order to install all the charts: Zabbix, grafana and EFK stack (ElasticSearch
 
 In my case I am using a Kubernetes cluster that runing on Virtual Machines with VMware Photon Os in a VMware ESXI Server.
 
-If you need to install and configure your own cluster using virtual machines with photon OS, look at this [repo](https://github.com/DadiAnas/zabbix-kubernetes) there are two scripts that will help to install kubeadm on master node and workers nodes.
+If you need to install and configure your own cluster using virtual machines with photon OS, look at this [repo](https://github.com/DadiAnas/zabbix-kubernetes/tree/main/kubeadm) there are two scripts that will help to install kubeadm on master node and workers nodes.
 
 The second thing that you need is [helm](https://helm.sh/): the package manager for kubernetes, installed on the master node.
 
