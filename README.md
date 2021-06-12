@@ -40,7 +40,7 @@ Update the list helm chart. This is recommend before install/upgrade a helm char
 
 Export default values of chart `helm-zabbix-grafana-elastic` to `$HOME/zeg_values.yaml`:
 
-    helm show values cetic/zabbix > $HOME/zeg_values.yaml
+    helm show values dadianas/zabbix-grafana-elastic > $HOME/zeg_values.yaml
 
 Change the values according to the environment in the file `$HOME/zeg_values.yaml`.
 
