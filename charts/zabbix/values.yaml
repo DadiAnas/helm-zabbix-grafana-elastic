@@ -149,6 +149,8 @@ zabbixagent:
 
 # **Zabbix web** configurations
 zabbixweb:
+  # -- Number of replicas of ``zabbixweb`` module
+  replicaCount: 1
   # -- Enables use of Zabbix web
   enabled: true
   image:
