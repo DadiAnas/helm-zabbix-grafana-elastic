@@ -1,0 +1,27 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: data0
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: {{ .Values.storage0 }}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data0"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: data1
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: {{ .Values.storage1 }}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data1"

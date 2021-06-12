@@ -1,3 +1,6 @@
+storage0: 10Gi
+storage1: 10Gi
+
 # grafana values
 grafana:
   replicas: 2
@@ -5,7 +8,6 @@ grafana:
     tag: 7.4.5 
   service:
     type: NodePort
-    port: 3000
   grafana.ini:
     security:
       allow_embedding: true
@@ -17,14 +19,12 @@ grafana:
     enabled: true
     type: pvc
     size: 10Gi
-  dashboards:
-    defaults:
-      local-dashboard:
-        url: https://raw.githubusercontent.com/DadiAnas/zabbix-kubernetes/main/grafana/helm-grafana/dashboard.json
 
+# zabbix values
 zabbix:
   replicaCount: 2
 
+# elasticsearch values
 elasticsearch:
     # Permit co-located instances for solitary minikube virtual machines.
   antiAffinity: "soft"
