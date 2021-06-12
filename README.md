@@ -48,6 +48,10 @@ Install the Zabbix helm chart with a release name `zeg` (zeg is the abriviation 
 
     helm install zabbix dadianas/zabbix-grafana-elastic --dependency-update -f $HOME/zabbix_values.yaml -n monitoring
 
+Get grafana `admin` user password by running
+
+    kubectl get secret --namespace monitoring zeg-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
 This chart create a PV volumes that will be deleted after uninstallation.
 
 To make a persistent one you have to remove `storage0` and `storage1` from `$Home/zeg_values.yaml` and create your own PV after installing the chart.

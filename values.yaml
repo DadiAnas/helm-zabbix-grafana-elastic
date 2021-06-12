@@ -24,8 +24,10 @@ grafana:
 # zabbix values
 zabbix:
   zabbixweb:
+    # -- Number of replicas of ``zabbixweb`` module
     replicaCount: 2
   zabbixServer:
+    # -- Number of replicas of ``zabbixServer`` module
     replicaCount: 1
 
 # elasticsearch values
