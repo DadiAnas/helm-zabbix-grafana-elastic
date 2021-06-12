@@ -8,6 +8,7 @@ grafana:
     tag: 7.4.5 
   service:
     type: NodePort
+    port: 3000
   grafana.ini:
     security:
       allow_embedding: true
