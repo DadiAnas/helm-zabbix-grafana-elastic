@@ -1,0 +1,49 @@
+# grafana values
+grafana:
+  replicas: 2
+  image:
+    tag: 7.4.5 
+  service:
+    type: NodePort
+    port: 3000
+  grafana.ini:
+    security:
+      allow_embedding: true
+    auth.anonymous:
+      enabled: true
+  plugins:
+  - alexanderzobnin-zabbix-app
+  persistence:
+    enabled: true
+    type: pvc
+    size: 10Gi
+  dashboards:
+    defaults:
+      local-dashboard:
+        url: https://raw.githubusercontent.com/DadiAnas/zabbix-kubernetes/main/grafana/helm-grafana/dashboard.json
+
+zabbix:
+  replicaCount: 2
+
+elasticsearch:
+    # Permit co-located instances for solitary minikube virtual machines.
+  antiAffinity: "soft"
+
+  # Shrink default JVM heap.
+  esJavaOpts: "-Xmx128m -Xms128m"
+
+  # Allocate smaller chunks of memory per pod.
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "512M"
+    limits:
+      cpu: "1000m"
+      memory: "512M"
+
+  persistence:
+    enabled: false
+
+kibana:
+  replicas: 2
+  healthCheckPath: "/api/status"

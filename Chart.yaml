@@ -1,0 +1,9 @@
+apiVersion: v2
+name: zabbix-grafana-elastic
+description: A Helm chart for the stack zabbix, grafana, elasticsearch, fluent-bit, kibana.
+maintainers:
+  - name: dadianas
+    email: dadi.anas@hotmail.fr
+type: application
+version: 0.1.0
+appVersion: "0.0.1"
