@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  zabbix-grafana-elastic:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2021-06-12T15:00:50.2736995+01:00"
+    description: A Helm chart for the stack zabbix, grafana, elasticsearch, fluent-bit,
+      kibana.
+    digest: a28841b1755c1b78de71a2852a2ad16c6aa6a11349795ab69eb1c0cea11de5ad
+    maintainers:
+    - email: dadi.anas@hotmail.fr
+      name: dadianas
+    name: zabbix-grafana-elastic
+    type: application
+    urls:
+    - release-charts/zabbix-grafana-elastic-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-06-12T15:00:50.2588727+01:00"
