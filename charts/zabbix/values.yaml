@@ -14,7 +14,7 @@ zabbixServer:
     # -- Zabbix server Docker image name
     repository: zabbix/zabbix-server-pgsql
     # -- Tag of Docker image of Zabbix server
-    tag: ubuntu-5.4.0
+    tag: ubuntu-5.2.0
     # -- Pull policy of Docker image
     pullPolicy: IfNotPresent
     # -- List of dockerconfig secrets names to use when pulling images
@@ -54,7 +54,7 @@ zabbixproxy:
     # -- Zabbix proxy Docker image name
     repository: zabbix/zabbix-proxy-mysql
     # -- Tag of Docker image of Zabbix proxy
-    tag: ubuntu-5.4.0
+    tag: ubuntu-5.2.0
     # -- Pull policy of Docker image
     pullPolicy: IfNotPresent
     #  -- List of dockerconfig secrets names to use when pulling images
@@ -108,7 +108,7 @@ zabbixagent:
     # -- Zabbix agent Docker image name
     repository: zabbix/zabbix-agent
     # -- Tag of Docker image of Zabbix agent
-    tag: ubuntu-5.4.0
+    tag: ubuntu-5.2.0
     # -- Pull policy of Docker image
     pullPolicy: IfNotPresent
     # -- List of dockerconfig secrets names to use when pulling images
@@ -149,15 +149,13 @@ zabbixagent:
 
 # **Zabbix web** configurations
 zabbixweb:
-  # -- Number of replicas of ``zabbixweb`` module
-  replicaCount: 1
   # -- Enables use of Zabbix web
   enabled: true
   image:
     # -- Zabbix web Docker image name
     repository: zabbix/zabbix-web-apache-pgsql
     # -- Tag of Docker image of Zabbix web
-    tag: ubuntu-5.4.0
+    tag: ubuntu-5.2.0
     # -- Pull policy of Docker image
     pullPolicy: IfNotPresent
     # zabbixweb.image.pullSecrets -- List of dockerconfig secrets names to use when pulling images

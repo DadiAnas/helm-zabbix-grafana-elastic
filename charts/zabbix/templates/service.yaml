@@ -56,15 +56,15 @@ metadata:
       app.kubernetes.io/managed-by: {{ .Release.Service }}-web
 spec:
   type: {{ .Values.zabbixweb.service.type }}
+{{- if .Values.zabbixweb.service.externalIPs }}
+  externalIPs:
+{{ toYaml .Values.zabbixweb.service.externalIPs | indent 4 }}
+{{- end }}
   ports:
     - port: {{ .Values.zabbixweb.service.port }}
       targetPort: {{ .Values.zabbixweb.service.targetPort }}
       protocol: TCP
       name: zabbix-web
-{{- if .Values.zabbixweb.service.externalIPs }}
-  externalIPs:
-{{ toYaml .Values.zabbixweb.service.externalIPs | indent 4 }}
-{{- end }}
   selector:
     app: zabbix-web
   {{- end }}
