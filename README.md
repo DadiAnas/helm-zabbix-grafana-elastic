@@ -44,7 +44,7 @@ Export default values of chart `helm-zabbix-grafana-elastic` to `$HOME/zeg_value
 
 Change the values according to the environment in the file `$HOME/zeg_values.yaml`.
 
-Install the Zabbix helm chart with a release name `zeg` (zeg is the abriviation of zabbix-elastic-grafana):
+Install the Zabbix helm chart with a release name `zabbix`:
 
     helm install zabbix dadianas/zabbix-grafana-elastic --dependency-update -f $HOME/zabbix_values.yaml -n monitoring
 
