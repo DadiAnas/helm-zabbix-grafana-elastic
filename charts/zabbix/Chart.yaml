@@ -4,7 +4,7 @@ dependencies:
 - condition: postgresql.enabled
   name: postgresql
   repository: https://charts.bitnami.com/bitnami
-  version: ~10.3.6
+  version: ~8.3.0
 description: Zabbix is a mature and effortless enterprise-class open source monitoring
   solution for network monitoring and application monitoring of millions of metrics.
 home: https://www.zabbix.com/
@@ -24,4 +24,4 @@ maintainers:
   name: Aecio Pires
   url: https://github.com/aeciopires
 name: zabbix
-version: 0.3.2
+version: 0.3.1
