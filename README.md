@@ -2,15 +2,15 @@
 
 ## About
 
-This [Helm](https://dadianas.github.io/helm-zabbix-grafana-elastic) chart installs the stack [Zabbix](https://www.zabbix.com), [grafana](https://grafana.com/), [kibana, elasticsearch](https://www.elastic.co/) and [fluent-bit](https://fluentbit.io/) in a Kubernetes cluster.
+This **[Helm](https://dadianas.github.io/helm-zabbix-grafana-elastic)** chart installs the stack [Zabbix](https://www.zabbix.com), [grafana](https://grafana.com/), [kibana, elasticsearch](https://www.elastic.co/) and [fluent-bit](https://fluentbit.io/) in a Kubernetes cluster.
 
 The composants of this stack is a collection of open source solutions, that will be used for monitoring & supervising BI:
 
-- [Zabbix](https://www.zabbix.com) : a mature and effortless enterprise-class open source monitoring solution for network monitoring and application monitoring of millions of metrics.
-- [Grafana](https://grafana.com/) : a multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources.
-- [Elasticsearch](https://www.elastic.co/what-is/elasticsearch) : a distributed, free and open search and analytics engine for all types of data, including textual, numerical, geospatial, structured, and unstructured. Elasticsearch is built on Apache Lucene and was first released in 2010 by Elasticsearch N.V. (now known as Elastic). Known for its simple REST APIs, distributed nature, speed, and scalability, Elasticsearch is the central component of the Elastic Stack, a set of free and open tools for data ingestion, enrichment, storage, analysis, and visualization. Commonly referred to as the ELK Stack (after Elasticsearch, Logstash, and Kibana), the Elastic Stack now includes a rich collection of lightweight shipping agents known as Beats for sending data to Elasticsearch.
-- [Kibana](https://www.elastic.co/what-is/kibana) an free and open frontend application that sits on top of the Elastic Stack, providing search and data visualization capabilities for data indexed in Elasticsearch. Commonly known as the charting tool for the Elastic Stack (previously referred to as the ELK Stack after Elasticsearch, Logstash, and Kibana), Kibana also acts as the user interface for monitoring, managing, and securing an Elastic Stack cluster — as well as the centralized hub for built-in solutions developed on the Elastic Stack. Developed in 2013 from within the Elasticsearch community, Kibana has grown to become the window into the Elastic Stack itself, offering a portal for users and companies.
-- [Fluent-bit](https://docs.logdna.com/docs/fluentbit) : an open source and multi-platform Log Processor and Forwarder which allows you to collect data/logs from different sources, unify and send them to multiple destinations. It's fully compatible with Docker and Kubernetes environments.
+- **[Zabbix](https://www.zabbix.com)** : a mature and effortless enterprise-class open source monitoring solution for network monitoring and application monitoring of millions of metrics.
+- **[Grafana](https://grafana.com/)** : a multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources.
+- **[Elasticsearch](https://www.elastic.co/what-is/elasticsearch)** : a distributed, free and open search and analytics engine for all types of data, including textual, numerical, geospatial, structured, and unstructured. Elasticsearch is built on Apache Lucene and was first released in 2010 by Elasticsearch N.V. (now known as Elastic). Known for its simple REST APIs, distributed nature, speed, and scalability, Elasticsearch is the central component of the Elastic Stack, a set of free and open tools for data ingestion, enrichment, storage, analysis, and visualization. Commonly referred to as the ELK Stack (after Elasticsearch, Logstash, and Kibana), the Elastic Stack now includes a rich collection of lightweight shipping agents known as Beats for sending data to Elasticsearch.
+- **[Kibana](https://www.elastic.co/what-is/kibana)** an free and open frontend application that sits on top of the Elastic Stack, providing search and data visualization capabilities for data indexed in Elasticsearch. Commonly known as the charting tool for the Elastic Stack (previously referred to as the ELK Stack after Elasticsearch, Logstash, and Kibana), Kibana also acts as the user interface for monitoring, managing, and securing an Elastic Stack cluster — as well as the centralized hub for built-in solutions developed on the Elastic Stack. Developed in 2013 from within the Elasticsearch community, Kibana has grown to become the window into the Elastic Stack itself, offering a portal for users and companies.
+- **[Fluent-bit](https://docs.logdna.com/docs/fluentbit)** : an open source and multi-platform Log Processor and Forwarder which allows you to collect data/logs from different sources, unify and send them to multiple destinations. It's fully compatible with Docker and Kubernetes environments.
 
 # Architecture
 
@@ -33,49 +33,85 @@ Among the features of Kubernetes are the following:
 
 ## Kubernetes component
 
-![kubernetes architecture]()
+![kubernetes architecture](https://raw.githubusercontent.com/DadiAnas/helm-zabbix-grafana-elastic/helm-repo-host-0.0.1/images/kube-architecture.png)
 
-More worker/masterr nodes the architecture have, more High-Availability is assured :
+More worker/masterr nodes the architecture have, more **High-Availability** is assured :
 
-![HA]()
+![HA](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/HighAvailability.png)
 
 ### kubernetes master node componenets
 
-![Kubernetes master]()
+![Kubernetes master](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/kube-master.png)
 
-The master is a system that takes pod scheduling decisions and manages the replication and manager nodes. It has three main components: API Server, Scheduler, and Controller. There can be more than one master node.
+The **master node** is a system that takes pod scheduling decisions and manages the replication and manager nodes. It has three main components: API Server, Scheduler, and Controller. There can be more than one master node.
 
-- The [Kubernetes API](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/) server validates and configures data for the api objects which include pods, services, replicationcontrollers, and others. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact.
-- A [scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/) watches for newly created Pods that have no Node assigned. For every Pod that the scheduler discovers, the scheduler becomes responsible for finding the best Node for that Pod to run on. The scheduler reaches this placement decision taking into account the scheduling principles described below.
-- Key-Value Store : The Kubernetes cluster state is saved in a key-value store, like etcd. It can be either part of the same Kubernetes cluster or it can resides outside.
+- The **[Kubernetes API](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)** server validates and configures data for the api objects which include pods, services, replicationcontrollers, and others. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact.
+- A **[scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/)** watches for newly created Pods that have no Node assigned. For every Pod that the scheduler discovers, the scheduler becomes responsible for finding the best Node for that Pod to run on. The scheduler reaches this placement decision taking into account the scheduling principles described below.
+- **Key-Value Store** : The Kubernetes cluster state is saved in a key-value store, like etcd. It can be either part of the same Kubernetes cluster or it can resides outside.
 
 If your Kubernetes cluster uses etcd as its backing store, make sure you have a [back up](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster) plan for those data.
 
 ### kubernetes worker node componenets
 
-Worker Node is a system on which pods are scheduled and run. The node runs a daemon called kubelet to communicate with the master node. kube-proxy, which runs on all nodes, allows applications from the external world.
+**Worker Node** is a system on which pods are scheduled and run. The node runs a daemon called kubelet to communicate with the master node. kube-proxy, which runs on all nodes, allows applications from the external world.
 
-![kubernetes worker]()
+![kubernetes worker](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/kube-worker.png)
 
 ### Some kubernetes key components
 
-- Pod
-  The pod is a co-located group of containers with shared volumes. It is the smallest deployment unit in Kubernetes. A pod can be created independently, but it is recommended to use the Replica Set, even if only a single pod is being deployed.
-- Replica Set
-  The Replica Set manages the lifecycle of pods. It makes sure that the desired numbers of pods is running at any given point in time.
-- Deployments
-  Deployments allow us to provide declarative updates for pods and Replica Sets. We can define Deployments to create new resources, or replace existing ones with new ones. Some typical use cases are presented below: 1. Create a Deployment to bring up a Replica Set and pods. 2. Check the status of a Deployment to see if it succeeds or not. 3. Later, update that Deployment to recreate the pods (for example, to use a new image). 4. Roll back to an earlier Deployment revision if the current Deployment isn’t stable. Pause and resume a Deployment.
+- **Pod** : The pod is a co-located group of containers with shared volumes. It is the smallest deployment unit in Kubernetes. A pod can be created independently, but it is recommended to use the Replica Set, even if only a single pod is being deployed.
+- **Replica Set** : The Replica Set manages the lifecycle of pods. It makes sure that the desired numbers of pods is running at any given point in time.
+- **Deployments** : Deployments allow us to provide declarative updates for pods and Replica Sets. We can define Deployments to create new resources, or replace existing ones with new ones. Some typical use cases are presented below:
 
-- Service
-  The service groups sets of pods together and provides a way to refer to them from a single static IP address and the corresponding DNS name. Below, we provide an example of a service file:
+  1. Create a Deployment to bring up a Replica Set and pods.
+  2. Check the status of a Deployment to see if it succeeds or not.
+  3. Later, update that Deployment to recreate the pods (for example, to use a new image).
+  4. Roll back to an earlier Deployment revision if the current Deployment isn’t stable. Pause and resume a Deployment.
+
+- **Service** : service groups sets of pods together and provides a way to refer to them from a single static IP address and the corresponding DNS name. Below, we provide an example of a service file:
+
+        apiVersion: v1
+        kind: Service
+        metadata:
+        name: zabbix-web
+        labels:
+            app: zabbix
+        namespace: zabbix
+        spec:
+        ports:
+        - port: 80
+            targetPort: 8080
+            name: web-http
+        - port: 443
+            targetPort: 8443
+            name: web-https
+        externalIPs:
+        - <Specify external IP here>
+        selector:
+            name: zabbix-web
+
+- **Label** : Label is an arbitrary key-value pair which is attached to a resource like pod, Replica Set, etc. In the example above, we defined labels as app and tier.
+- **Selector** : Selectors enable us to group resources based on labels.
+- **Volume** : The volume is an external filesystem or storage which is available to pods. They are built on top of Docker volumes.
+- **Namespace** : The namespace allows us to partition the cluster into sub-clusters.
+
+# Dev Environement
+
+This section is optional, you don't need to read it, you can go to installation.
+
+The Kubernetes cluster used in development environment is runing on Virtual Machines with VMware Photon Os in a VMware ESXI Server.
+
+![remote esxi](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/remote-esxi.png)
+
+![ESXI server](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/esxi-server.png)
 
 # Installation
 
+In this section we will descuss the installation of this helm chart, starting by the Prerequisites:
+
 ## Prerequisites
 
-In order to install all the charts: Zabbix, grafana and EFK stack (ElasticSearch/Fluent-bit/Kibana) on kubernetes, you must have a well configured kubernetes cluster.
-
-In my case I am using a Kubernetes cluster that runing on Virtual Machines with VMware Photon Os in a VMware ESXI Server.
+In order to install all this charts, you must have a well configured kubernetes cluster.
 
 If you need to install and configure your own cluster using virtual machines with photon OS, look at this [repo](https://github.com/DadiAnas/zabbix-kubernetes/tree/main/kubeadm) there are two scripts that will help to install kubeadm on master node and workers nodes.
 
