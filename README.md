@@ -36,15 +36,15 @@ Among the features of Kubernetes are the following:
 
 ## Kubernetes component
 
-![kubernetes architecture](https://raw.githubusercontent.com/DadiAnas/helm-zabbix-grafana-elastic/helm-repo-host-0.0.1/images/kube-architecture.png)
+![kubernetes architecture](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/kube-architecture.png)
 
 More worker/masterr nodes the architecture have, more **High-Availability** is assured :
 
-![HA](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/HighAvailability.png)
+![HA](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/HighAvailability.png)
 
 ### kubernetes master node componenets
 
-![Kubernetes master](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/kube-master.png)
+![Kubernetes master](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/kube-master.png)
 
 The **master node** is a system that takes pod scheduling decisions and manages the replication and manager nodes. It has three main components: API Server, Scheduler, and Controller. There can be more than one master node.
 
@@ -58,7 +58,7 @@ If your Kubernetes cluster uses etcd as its backing store, make sure you have a 
 
 **Worker Node** is a system on which pods are scheduled and run. The node runs a daemon called kubelet to communicate with the master node. kube-proxy, which runs on all nodes, allows applications from the external world.
 
-![kubernetes worker](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/kube-worker.png)
+![kubernetes worker](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/kube-worker.png)
 
 ### Some kubernetes key components
 
@@ -104,9 +104,9 @@ This section is optional, you don't need to read it, you can go to installation.
 
 The Kubernetes cluster used in development environment is runing on Virtual Machines with VMware Photon Os in a VMware ESXI Server.
 
-![remote esxi](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/remote-esxi.png)
+![remote esxi](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/remote-esxi.png)
 
-![ESXI server](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/esxi-server.png)
+![ESXI server](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/esxi-server.png)
 
 # Installation
 
