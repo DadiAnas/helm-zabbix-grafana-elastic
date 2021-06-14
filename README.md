@@ -51,6 +51,7 @@ The **master node** is a system that takes pod scheduling decisions and manages 
 - The **[Kubernetes API](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)** server validates and configures data for the api objects which include pods, services, replicationcontrollers, and others. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact.
 - A **[scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/)** watches for newly created Pods that have no Node assigned. For every Pod that the scheduler discovers, the scheduler becomes responsible for finding the best Node for that Pod to run on. The scheduler reaches this placement decision taking into account the scheduling principles described below.
 - **Key-Value Store** : The Kubernetes cluster state is saved in a key-value store, like etcd. It can be either part of the same Kubernetes cluster or it can resides outside.
+- **[controller](https://kubernetes.io/docs/concepts/architecture/controller/)** : A controller tracks at least one Kubernetes resource type. These objects have a spec field that represents the desired state. The controller(s) for that resource are responsible for making the current state come closer to that desired state.
 
 If your Kubernetes cluster uses etcd as its backing store, make sure you have a [back up](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster) plan for those data.
 
