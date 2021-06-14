@@ -162,7 +162,7 @@ Install the Zabbix helm chart with a release name `zeg` (zeg is the abriviation 
 
 Get grafana `admin` user password by running
 
-    kubectl get secret --namespace monitoring zeg-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+    kubectl get secret --namespace monitoring zabbix-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 
 This chart create a PV volumes that will be deleted after uninstallation.
 
