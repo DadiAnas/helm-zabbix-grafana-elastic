@@ -158,7 +158,7 @@ Change the values according to the environment in the file `$HOME/zeg_values.yam
 
 Install the Zabbix helm chart with a release name `zeg` (zeg is the abriviation of zabbix-elastic-grafana):
 
-    helm install zabbix dadianas/zabbix-grafana-elastic --dependency-update -f $HOME/zabbix_values.yaml -n monitoring
+    helm install zabbix dadianas/zabbix-grafana-elastic --dependency-update -f $HOME/zeg_values.yaml -n monitoring
 
 Get grafana `admin` user password by running
 
