@@ -9,7 +9,7 @@ metadata:
     release: {{ .Release.Name | quote }}
     heritage: {{ .Release.Service | quote }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.zabbixserver.service.replicaCount | default 1 }}
   serviceName: {{ template "zabbix.fullname" . }}
   selector:
     matchLabels:

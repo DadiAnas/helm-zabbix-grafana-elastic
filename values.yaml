@@ -16,6 +16,8 @@ grafana:
       enabled: true
   plugins:
   - alexanderzobnin-zabbix-app
+  - grafana-worldmap-panel
+  - agenty-flowcharting-panel
   persistence:
     enabled: true
     type: pvc
