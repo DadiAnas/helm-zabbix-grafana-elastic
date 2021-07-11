@@ -36,21 +36,22 @@ Among the features of Kubernetes are the following:
 
 ## Kubernetes component
 
-![kubernetes architecture](https://raw.githubusercontent.com/DadiAnas/helm-zabbix-grafana-elastic/helm-repo-host-0.0.1/images/kube-architecture.png)
+![kubernetes architecture](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/kube-architecture.png)
 
 More worker/masterr nodes the architecture have, more **High-Availability** is assured :
 
-![HA](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/HighAvailability.png)
+![HA](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/HighAvailability.png)
 
 ### kubernetes master node componenets
 
-![Kubernetes master](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/kube-master.png)
+![Kubernetes master](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/kube-master.png)
 
 The **master node** is a system that takes pod scheduling decisions and manages the replication and manager nodes. It has three main components: API Server, Scheduler, and Controller. There can be more than one master node.
 
 - The **[Kubernetes API](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)** server validates and configures data for the api objects which include pods, services, replicationcontrollers, and others. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact.
 - A **[scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/)** watches for newly created Pods that have no Node assigned. For every Pod that the scheduler discovers, the scheduler becomes responsible for finding the best Node for that Pod to run on. The scheduler reaches this placement decision taking into account the scheduling principles described below.
 - **Key-Value Store** : The Kubernetes cluster state is saved in a key-value store, like etcd. It can be either part of the same Kubernetes cluster or it can resides outside.
+- **[controller](https://kubernetes.io/docs/concepts/architecture/controller/)** : A controller tracks at least one Kubernetes resource type. These objects have a spec field that represents the desired state. The controller(s) for that resource are responsible for making the current state come closer to that desired state.
 
 If your Kubernetes cluster uses etcd as its backing store, make sure you have a [back up](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster) plan for those data.
 
@@ -58,7 +59,7 @@ If your Kubernetes cluster uses etcd as its backing store, make sure you have a 
 
 **Worker Node** is a system on which pods are scheduled and run. The node runs a daemon called kubelet to communicate with the master node. kube-proxy, which runs on all nodes, allows applications from the external world.
 
-![kubernetes worker](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/kube-worker.png)
+![kubernetes worker](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/kube-worker.png)
 
 ### Some kubernetes key components
 
@@ -104,9 +105,9 @@ This section is optional, you don't need to read it, you can go to installation.
 
 The Kubernetes cluster used in development environment is runing on Virtual Machines with VMware Photon Os in a VMware ESXI Server.
 
-![remote esxi](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/remote-esxi.png)
+![remote esxi](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/remote-esxi.png)
 
-![ESXI server](https://github.com/DadiAnas/helm-zabbix-grafana-elastic/raw/helm-repo-host-0.0.1/images/esxi-server.png)
+![ESXI server](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/esxi-server.png)
 
 # Installation
 
@@ -156,7 +157,7 @@ Export default values of chart `helm-zabbix-grafana-elastic` to `$HOME/zeg_value
 
 Change the values according to the environment in the file `$HOME/zeg_values.yaml`.
 
-Install the Zabbix helm chart with a release name `zeg` (zeg is the abriviation of zabbix-elastic-grafana):
+Install the Zabbix helm chart with a release name `zabbix` :
 
     helm install zabbix dadianas/zabbix-grafana-elastic --dependency-update -f $HOME/zeg_values.yaml -n monitoring
 
