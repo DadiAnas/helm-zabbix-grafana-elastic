@@ -38,7 +38,7 @@ Among the features of Kubernetes are the following:
 
 ![kubernetes architecture](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/kube-architecture.png)
 
-More worker/masterr nodes the architecture have, more **High-Availability** is assured :
+More workers/masters the architecture has, more the **High-Availability** is assured :
 
 ![HA](https://github.com/DadiAnas/zabbix-kubernetes/raw/main/images/HighAvailability.png)
 
